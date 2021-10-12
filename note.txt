@@ -1,4 +1,20 @@
 npm install react-redux
+
+jb ek component ke under data dalna hota hai to -> state use krte hai
+job ek component se dusre component ke bich communication krwana hota hai to -> props use krte hai.
+
+file structure ->
+components
+containers -> connect/map components and service
+service (store redux)
+    -> actions
+    -> reducers
+        -> root reducers => combine all reducer in one file.
+    -> constants -> jb data action se reducers me jayega to (kaun sa data kaha match hoga) constants btayega. {actions and reducers me multiple functio ho skte hai.} 
+
+
+ imp -> pahle hum components ko direct call krte the  but jb hum redux use krte hai.
+            to components ko containers ke sath me use krte hai. {HomeContainer ek prakar ka component hi hai}   
 ////////////////////////////////////////////////////
 
 echo "# react-redux" >> README.md
@@ -10,7 +26,7 @@ git remote add origin https://github.com/CodeWithSudhakar/react-redux.git
 git push -u origin main
 
 ////////////////////////////////////////////////////
-
+execute commands->
 
 git init
 git add .
@@ -18,3 +34,85 @@ git commit -m"first commit"
 git branch -M master
 git remote add origin https://github.com/CodeWithSudhakar/react-redux.git
 git push -u origin master
+
+
+After product and cart img set
+git branch
+
+* hume direact master branch pr code push nhi krna chahiye
+git checkout -b dev
+
+git add .
+git commit -m"add to cart desgin done"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function App() {
+  return (
+    <div className="App">
+      <User data={{name : 'Sudhakar Pandey', age: 23}} />
+    </div>
+  );
+}
+
+
+import React from 'react'
+
+const User = (props) => {
+    console.warn(props.data.name);
+
+    const {data} =props;
+    return (
+        <div>
+            <h2>User Component</h2>
+            <h4>{data.name}</h4>
+            <h4>{data.age}</h4>
+        </div>
+    )
+}
+
+export default User
