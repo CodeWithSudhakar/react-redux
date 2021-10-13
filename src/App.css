@@ -30,7 +30,7 @@
 /*  */
 
 .btn-wrapper button{
-  background-color: red;
+  background-color: green;
   border: 0px;
   padding: 10px;
   border-radius: 4px;
@@ -54,7 +54,7 @@
   float: left;
   display: inline-block;
   width: 120px;
-  padding: 20px;
+  padding: 14px;
   height: 70px;
 }
 .add-to-cart img{
@@ -62,6 +62,23 @@
   position: absolute;
   right: 1%;
   top: 1%;
+}
+
+.cart-count{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  border-radius: 50%;
+}
+
+button.remove-cart-btn{
+  background-color: red;
+  margin-top: 8px;
 }
 /*  */
 @keyframes App-logo-spin {

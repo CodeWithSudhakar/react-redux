@@ -7,14 +7,38 @@ file structure ->
 components
 containers -> connect/map components and service
 service (store redux)
-    -> actions
+
+    -> actions => send data react to store {action button click pr 'data lekar'       redux ke store me store krwa dega }
+        => data send react components or API  to redux store
+
     -> reducers
-        -> root reducers => combine all reducer in one file.
+        -> root reducers => combine all reducer in one file. {action se jo data milta hai usko store k under push krta hai. filter out kr kr}
+
     -> constants -> jb data action se reducers me jayega to (kaun sa data kaha match hoga) constants btayega. {actions and reducers me multiple functio ho skte hai.} 
+
 
 
  imp -> pahle hum components ko direct call krte the  but jb hum redux use krte hai.
             to components ko containers ke sath me use krte hai. {HomeContainer ek prakar ka component hi hai}   
+      actions internaly call hote rahte hai. kuch v import krne ki jrurat nhi padti.
+
+
+imp -> root reducer (for single store)=> ek react project me ek hi store ho skte hai. ek store k liye    ek reducer chahiye, agar ek se jyada ruducer bn jaye to sare reducer ek reducer root reducer me merge krna hoga.  
+
+imp-> containers-> connect react and redux.
+
+*
+react redux se -> connect function lenge
+import { connect } from 'react-redux'
+
+connect ->takes two parameter, and next component
+connect (mapStateToProps, mapDispatchToProps)(components here)
+mapDispatchToProps -> for data send
+mapStateToProps -> data ko wapas se send krne k liye
+
+Provider -> Redux deta ko puri application me flow krega. 
+
+dusre components me data trasfer krne k liye, ek container bnane ki jrurat hoti hai. agare application complex hoto action aur reducer aur v bnani pd skti hai.
 ////////////////////////////////////////////////////
 
 echo "# react-redux" >> README.md
@@ -45,6 +69,8 @@ git checkout -b dev
 git add .
 git commit -m"add to cart desgin done"
 
+git push
+git push --set-upstream origin dev
 
 
 
